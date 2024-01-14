@@ -1,45 +1,45 @@
 html {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 body {
-  min-height: 100vh;
-  padding: 0px;
-  margin: 0px;
+  min-height: 100vh !important;
+  padding: 0px !important;
+  margin: 0px !important;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('./assets/background.jpg');
-  background-size: cover;
-  background-position: center;
-  fill: rgba(0, 0, 0, 0.56);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('./assets/background.jpg') !important; 
+  background-size: cover !important;
+  background-position: center !important;
+  fill: rgba(0, 0, 0, 0.56) !important;
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -moz-backdrop-filter: blur(10px);
-  -o-backdrop-filter: blur(10px);
-  -ms-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  -moz-backdrop-filter: blur(10px) !important;
+  -o-backdrop-filter: blur(10px) !important;
+  -ms-backdrop-filter: blur(10px) !important;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 500 !important;
+  color: #646cff !important;
+  text-decoration: inherit !important;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #535bf2 !important;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2em !important;
+  line-height: 1.1 !important;
 }

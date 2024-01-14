@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+
+import './App.css';
+import { VStack } from '@chakra-ui/react';
 
 const App = () => {
   const [bardReturn, setBardReturn] = useState<string>();
@@ -16,7 +18,7 @@ const App = () => {
     };
     const model = genAI.getGenerativeModel({ model: "gemini-pro", generationConfig })
 
-    const prompt = "Me de uma ideia do que desenhar hoje";
+    const prompt = "√49";
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -29,12 +31,11 @@ const App = () => {
     promptReturn()
   }, [])
 
-  
-
   return (
-    <div>asdasdasd
-      <p>{bardReturn}</p>
-    </div>
+    <VStack  color="#fff" >
+        <p>asdasd</p>
+        <p>{bardReturn}</p>
+    </VStack>
   )
 }
 
