@@ -1,16 +1,21 @@
-import { VStack } from '@chakra-ui/react'
+import { HStack, VStack } from '@chakra-ui/react'
 import BardReturn from '../BardReturn/BardReturn'
 import { PromptInput } from '../PromptInput/PromptInput'
 import { useState } from 'react'
+import LastAsked from '../LastAsked/LastAsked'
 
 const Main = () => {
-  const[speechResult, setSpeechResult] = useState("");
+  const [speechResult, setSpeechResult] = useState("");
 
   return (
-    <VStack>
-      <BardReturn speechResult={speechResult}/>
-      <PromptInput speechResult={speechResult} setSpeechResult={setSpeechResult}/>
-    </VStack>
+    <HStack h="100vh" padding="30px" alignItems="end">
+      <LastAsked />
+      <VStack w="100%">
+        <BardReturn speechResult={speechResult} />
+        <PromptInput speechResult={speechResult} setSpeechResult={setSpeechResult} />
+      </VStack>
+    </HStack>
+
   )
 }
 

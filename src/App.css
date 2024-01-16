@@ -1,10 +1,10 @@
 html {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-family: Roboto !important;
   line-height: 1.5 !important;
   font-weight: 400 !important;
 
   color-scheme: light dark !important;
-  color: rgba(255, 255, 255, 0.87) !important;
+  color: rgb(217, 217, 217) !important;
 
   font-synthesis: none !important;
   text-rendering: optimizeLegibility !important;
@@ -13,9 +13,11 @@ html {
 }
 
 body {
+  font-family: Roboto !important;
   min-height: 100vh !important;
   padding: 0px !important;
   margin: 0px !important;
+  color: rgb(217, 217, 217) !important;
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url('./assets/background.jpg') !important; 
   background-size: cover !important;
