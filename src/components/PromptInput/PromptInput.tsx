@@ -1,4 +1,7 @@
 import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import { useState } from 'react';
+import mic from '../../assets/svg/mic.svg';
+import send from '../../assets/svg/send.svg';
 
 interface IProps {
     speechResult: string;
@@ -6,6 +9,8 @@ interface IProps {
 }
 
 export const PromptInput: React.FC<IProps> = ({ speechResult, setSpeechResult }) => {
+    const [isDisabled, setIsDisabled] = useState(false);
+
     const SpeechToText = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechToText) {
@@ -30,16 +35,25 @@ export const PromptInput: React.FC<IProps> = ({ speechResult, setSpeechResult })
     const stop = () => {
         speech.stop();
     };
+
+    isDisabled ? start() : stop()
+
     return (
         <InputGroup size='md'>
             <Input
                 defaultValue={speechResult}
+                borderRadius="15px"
+                backgroundColor="rgba(217, 217, 217, 0.35);"
+                color="#D9D9D9"
+                _placeholder={{ color: '#D9D9D9' }}
+                border="none"
+                backdropBlur="10px"
                 pr='4.5rem'
-                placeholder='Enter password'
+                placeholder='Ask me about anything.'
             />
             <InputRightElement width='4.5rem'>
-                <Button onClick={start}>Gravar</Button>
-                <Button onClick={stop}>Parar</Button>
+                <Button disabled={true} onClick={() => setIsDisabled(!isDisabled)}><img src={mic} /></Button>
+                <Button disabled={true}><img src={send} /></Button>
             </InputRightElement>
         </InputGroup>
     )
