@@ -7,7 +7,7 @@ import SuggestionCard from '../SuggestionCard/SuggestionCard';
 import ReactGPT from '../../assets/svg/ReactGTP.svg';
 
 const Main = () => {
-  const [speechResult, setSpeechResult] = useState();
+  const [speechResult, setSpeechResult] = useState('');
 
   const windowWidth = window.innerWidth;
 

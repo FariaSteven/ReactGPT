@@ -1,7 +1,6 @@
 import { Box, Text, VStack } from '@chakra-ui/react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { useCallback, useEffect, useState } from 'react'
-import Loader from '../Loader/Loader';
 
 const Chat = ({ speechResult }: any) => {
   const [bardReturn, setBardReturn]: any = useState<string>('');

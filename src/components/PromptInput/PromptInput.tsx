@@ -13,7 +13,8 @@ export const PromptInput: React.FC<IProps> = ({ speechResult, setSpeechResult })
     const [isDisabled, setIsDisabled] = useState(false);
     const [inputText, setInputText] = useState("");
 
-    const SpeechToText = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let getWindow: any = window;
+    const SpeechToText = getWindow.SpeechRecognition || getWindow.webkitSpeechRecognition;
 
     if (!SpeechToText) {
         console.error('SpeechRecognition is not available in this browser.');
@@ -46,7 +47,7 @@ export const PromptInput: React.FC<IProps> = ({ speechResult, setSpeechResult })
     return (
         <InputGroup size='lg' p="none">
             <Input
-                defaultValue={speechResult !== "" ? speechResult : null}
+                defaultValue={speechResult}
                 borderRadius="15px"
                 backgroundColor="rgba(217, 217, 217, 0.35);"
                 color="#D9D9D9"
