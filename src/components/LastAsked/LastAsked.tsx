@@ -13,7 +13,7 @@ const LastAsked = () => {
               background: 'transparent',
               borderRadius: '24px',
             },
-          }} maxW="300px" h="100%" p="20px" mr="30px" borderRadius="20px"  backgroundColor="rgba(217, 217, 217, 0.35);" backdropBlur="10px">
+          }} maxW="350px" h="100%" p="20px" mr="30px" borderRadius="20px"  backgroundColor="rgba(217, 217, 217, 0.35);" backdropBlur="10px">
             <VStack alignItems="flex-start">
                 <Text fontWeight="400" fontSize="18px">Today</Text>
                 <Text fontWeight="100" fontSize="16px" pb="8px" mb="5px" borderBottomWidth="1px" borderBottomColor="rgba(217, 217, 217, 0.35);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie dignissim...</Text> 

@@ -24,11 +24,11 @@ body {
   background-position: center !important;
   fill: rgba(0, 0, 0, 0.56) !important;
 
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  -moz-backdrop-filter: blur(10px) !important;
-  -o-backdrop-filter: blur(10px) !important;
-  -ms-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(100px) !important;
+  -webkit-backdrop-filter: blur(100px) !important;
+  -moz-backdrop-filter: blur(100px) !important;
+  -o-backdrop-filter: blur(100px) !important;
+  -ms-backdrop-filter: blur(100px) !important;
 }
 
 a {
