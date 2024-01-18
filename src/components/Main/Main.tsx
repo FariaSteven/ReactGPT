@@ -2,18 +2,18 @@ import { HStack, Text, VStack } from '@chakra-ui/react';
 import BardReturn from '../Chat/Chat';
 import { PromptInput } from '../PromptInput/PromptInput';
 import { useState } from 'react';
-import LastAsked from '../LastAsked/LastAsked';
+// import LastAsked from '../LastAsked/LastAsked';
 import SuggestionCard from '../SuggestionCard/SuggestionCard';
 import ReactGPT from '../../assets/svg/ReactGTP.svg';
 
 const Main = () => {
   const [speechResult, setSpeechResult] = useState('');
 
-  const windowWidth = window.innerWidth;
+  // const windowWidth = window.innerWidth;
 
   return (
     <HStack h="100vh" padding="30px" alignItems="end">
-      { windowWidth >= 1024 && <LastAsked />}
+      {/* { windowWidth >= 1024 && <LastAsked />} */}
       <VStack w="100%" height="100%" justifyContent="end">
         {!speechResult &&
           <VStack height="100%" mt="20px">

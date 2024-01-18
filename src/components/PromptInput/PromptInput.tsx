@@ -1,5 +1,5 @@
-import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { Button, Input, InputGroup } from '@chakra-ui/react';
+import { useCallback, useEffect, useState } from 'react';
 import mic from '../../assets/svg/mic.svg';
 import micFill from '../../assets/svg/micFill.svg';
 import send from '../../assets/svg/send.svg';
@@ -44,40 +44,62 @@ export const PromptInput: React.FC<IProps> = ({ speechResult, setSpeechResult })
         console.log(isDisabled)
     }, [isDisabled]);
 
+    // useEffect(() => {
+    //     setInputText("LIMPO")
+    // }, [])
+
+    const handleKeyPress = useCallback((event: any) => {
+        if (event.key === 'Enter') {
+            setSpeechResult(inputText)
+            setInputText("")
+            console.log("INPUTTEXT", inputText)
+        }
+    }, [inputText, speechResult])
+
+    // const handleKeyPress = (event: any) => {
+    //     if (event.key === 'Enter') {
+    //         setSpeechResult(inputText)
+    //         console.log(event.key)
+    //     }
+    // }
+
     return (
-        <InputGroup size='lg' p="none">
+        <InputGroup w={["100%", "50%"]} size='lg' p="none">
             <Input
+                onKeyDown={(e) => handleKeyPress(e)}
                 defaultValue={speechResult}
-                borderRadius="15px"
-                backgroundColor="rgba(217, 217, 217, 0.35);"
+                borderRadius="15px 0px 0px 15px"
+                backgroundColor="rgba(217, 217, 217, 0.25);"
                 color="#D9D9D9"
                 _placeholder={{ color: '#D9D9D9' }}
+                _focus={{ border: "none" }}
                 border="none"
                 backdropBlur="10px"
                 placeholder='Ask me about anything.'
                 onChange={(e: any) => setInputText(e.target.value)}
             />
-            <InputRightElement width=''>
-                <Button
-                    paddingStart="none"
-                    p="2"
-                    _hover={{ backgroundColor: "transparent" }}
-                    _active={{ backgroundColor: "transparent" }}
-                    bg="transparent"
-                    onClick={() => setIsDisabled(!isDisabled)}
-                >
-                    <img src={isDisabled ? micFill : mic} />
-                </Button>
-                <Button
-                    paddingStart="none"
-                    _hover={{ backgroundColor: "transparent" }}
-                    _active={{ backgroundColor: "transparent" }}
-                    bg="transparent"
-                    onClick={() => setSpeechResult(inputText)}
-                >
-                    <img src={send} />
-                </Button>
-            </InputRightElement>
+            <Button
+                paddingStart="none"
+                p="0"
+                borderRadius="0px"
+                _hover={{ backgroundColor: "rgba(217, 217, 217, 0.40);" }}
+                _focus={{ backgroundColor: "rgba(217, 217, 217, 0.40);" }}
+                backgroundColor="rgba(217, 217, 217, 0.35);"
+                onClick={() => setIsDisabled(!isDisabled)}
+            >
+                <img src={isDisabled ? micFill : mic} />
+            </Button>
+            <Button
+                paddingStart="none"
+                p="0"
+                borderRadius="0px 10px 10px 0px"
+                _hover={{ backgroundColor: "rgba(217, 217, 217, 0.40);" }}
+                backgroundColor="rgba(217, 217, 217, 0.35);"
+
+                onClick={() => setSpeechResult(inputText)}
+            >
+                <img src={send} />
+            </Button>
         </InputGroup>
     )
 }

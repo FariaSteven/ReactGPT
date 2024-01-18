@@ -21,7 +21,10 @@ const Chat = ({ speechResult }: any) => {
       const result = await model?.generateContent(prompt);
       const response = result?.response;
       const text = response?.text();
-      setBardReturn(text);
+      text !== "" && 
+      text !== "package com.example.demo.controller; import com.example.demo.model.User; import com.example.demo.service.UserService; import org.springframework.beans.factory.annotation.Autowi"
+      ? setBardReturn(text) : "Error";
+      
       console.log(text);
     }
     catch (error) {
@@ -42,9 +45,10 @@ const Chat = ({ speechResult }: any) => {
       overflow="auto"
       w="100%"
     >
-      {speechResult &&
+      {bardReturn !== "" && speechResult &&
         chatMessages?.slice(4)?.map((item: any, index: any) => (
           <Box
+            key={index}
             border="1px solid #D9D9D966"
             p="10px"
             backgroundColor={index % 2 === 1 ? "rgba(107, 107, 107, 0.35);" : "rgba(217, 217, 217, 0.35);"}
