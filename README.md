@@ -17,7 +17,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Tratamento de erros vindos da propria API do Google
 - [ ] Limpar input ao enviar
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando ReactGPT
 
 Para instalar o ReactGPT, siga estas etapas:
 
